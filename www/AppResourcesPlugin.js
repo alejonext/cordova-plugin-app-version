@@ -1,8 +1,3 @@
-cordova.define("cordova-plugin-app-resources.AppResourcesPlugin", function(require, exports, module) {
-/*jslint indent: 2 */
-/*global window, jQuery, angular, cordova */
-"use strict";
-
 // Returns a jQuery or AngularJS deferred object, or pass a success and fail callbacks if you don't want to use jQuery or AngularJS
 var getPromisedCordovaExec = function (command, success, fail, args) {
   var toReturn, deferred, injector, $q;
@@ -68,5 +63,3 @@ getAppResources.getResources = function (name, success, fail) {
 };
 
 module.exports = getAppResources;
-
-});

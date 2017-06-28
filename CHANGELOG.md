@@ -1,4 +1,4 @@
-### 0.1.10
+### 0.2.2
 * Get the resources in Android and iOS
 
 ### 0.1.9
