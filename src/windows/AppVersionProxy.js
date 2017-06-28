@@ -28,6 +28,10 @@ AppVersionProxy = {
   getVersionCode: function (successCallback, failCallback, args) {
     var build = Windows.ApplicationModel.Package.current.id.version.build;
     successCallback(build);
+  },
+  getResources: function (successCallback, failCallback, args) {
+    var build = Windows.ApplicationModel.Package.current.id.version.build;
+    successCallback(build);
   }
 };
 cordova.commandProxy.add("AppVersion", AppVersionProxy);

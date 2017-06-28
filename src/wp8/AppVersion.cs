@@ -49,5 +49,12 @@ namespace Cordova.Extension.Commands
 
 			this.DispatchCommandResult(new PluginResult(PluginResult.Status.OK, package));
 		}
+
+		public void getResources(string empty)
+		{
+			string package = Assembly.GetExecutingAssembly().GetName().Name;
+
+			this.DispatchCommandResult(new PluginResult(PluginResult.Status.OK, package));
+		}
 	}
 }

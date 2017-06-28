@@ -1,3 +1,6 @@
+### 0.1.10
+* Get the resources in Android and iOS
+
 ### 0.1.9
 * Renamed Windows8 platform to Windows 
 

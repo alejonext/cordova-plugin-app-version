@@ -58,6 +58,14 @@ Returns the build identifier of the app
 
 Returns the version number of the app
 
+### getResources
+
+Returns the resources indicate
+
+	cordova.getAppVersion
+		.getResources('app_name')
+		.then((appName) => console.log('the app name is:', appName))
+
 ## Credits
 
 Written by [Robert (Jamie) Munro](http://twitter.com/rjmunro) at

@@ -28,12 +28,17 @@ public class AppVersion extends CordovaPlugin {
       if (action.equals("getVersionNumber")) {
         PackageManager packageManager = this.cordova.getActivity().getPackageManager();
         callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName);
-      return true;
+        return true;
       }
       if (action.equals("getVersionCode")) {
         PackageManager packageManager = this.cordova.getActivity().getPackageManager();
         callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionCode);
-      return true;
+        return true;
+      }
+      if (action.equals("getResources")) {
+        int resID = this.cordova.getActivity().getIdentifier(args.getString(0), "string", this.cordova.getActivity().getPackageName());
+        callbackContext.success((String) this.cordova.getActivity().getResources().getString(resID));
+        return true;
       }
       return false;
     } catch (NameNotFoundException e) {

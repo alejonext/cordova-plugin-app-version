@@ -1,9 +1,10 @@
+cordova.define("cordova-plugin-app-version.AppVersionPlugin", function(require, exports, module) {
 /*jslint indent: 2 */
 /*global window, jQuery, angular, cordova */
 "use strict";
 
 // Returns a jQuery or AngularJS deferred object, or pass a success and fail callbacks if you don't want to use jQuery or AngularJS
-var getPromisedCordovaExec = function (command, success, fail) {
+var getPromisedCordovaExec = function (command, success, fail, args) {
   var toReturn, deferred, injector, $q;
   if (success === undefined) {
     if (window.jQuery) {
@@ -38,7 +39,7 @@ var getPromisedCordovaExec = function (command, success, fail) {
     }
   }
   // 5th param is NOT optional. must be at least empty array
-  cordova.exec(success, fail, "AppVersion", command, []);
+  cordova.exec(success, fail, "AppVersion", command, args || []);
   return toReturn;
 };
 
@@ -62,4 +63,10 @@ getAppVersion.getVersionCode = function (success, fail) {
   return getPromisedCordovaExec('getVersionCode', success, fail);
 };
 
+getAppVersion.getResources = function (name, success, fail) {
+  return getPromisedCordovaExec('getResources', success, fail, [ name ]);
+};
+
 module.exports = getAppVersion;
+
+});
