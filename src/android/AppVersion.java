@@ -36,7 +36,7 @@ public class AppVersion extends CordovaPlugin {
         return true;
       }
       if (action.equals("getResources")) {
-        int resID = this.cordova.getActivity().getIdentifier(args.getString(0), "string", this.cordova.getActivity().getPackageName());
+        int resID = this.cordova.getActivity().getResources().getIdentifier(args.getString(0), "string", this.cordova.getActivity().getPackageName());
         callbackContext.success((String) this.cordova.getActivity().getResources().getString(resID));
         return true;
       }
