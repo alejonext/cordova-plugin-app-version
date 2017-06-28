@@ -13,7 +13,7 @@
 
 ### 0.1.6
 
-* Split into two functions getAppVersion.getVersionNumber() and getAppVersion.getVersionCode() to return build number
+* Split into two functions getAppResources.getVersionNumber() and getAppResources.getVersionCode() to return build number
 * Fix a deprecation warning in iOS version
 
 ### 0.1.5

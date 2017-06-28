@@ -1,4 +1,4 @@
-# Cordova AppVersion plugin
+# Cordova AppResources plugin
 
 Reads the version of your app from the target build settings.
 
@@ -30,13 +30,13 @@ TODO: Write these instructions
 
 If you are using jQuery, AngularJS, WinJS or any Promise/A library (Bluebird), promise style is supported. Use something like:
 
-    cordova.getAppVersion.getVersionNumber().then(function (version) {
+    cordova.getAppResources.getVersionNumber().then(function (version) {
         $('.version').text(version);
     });
 
 If not, pass a callback function:
 
-    cordova.getAppVersion.getVersionNumber(function (version) {
+    cordova.getAppResources.getVersionNumber(function (version) {
         alert(version);
     });
 
@@ -62,7 +62,7 @@ Returns the version number of the app
 
 Returns the resources indicate
 
-	cordova.getAppVersion
+	cordova.getAppResources
 		.getResources('app_name')
 		.then((appName) => console.log('the app name is:', appName))
 

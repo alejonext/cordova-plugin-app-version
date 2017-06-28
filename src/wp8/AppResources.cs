@@ -7,7 +7,7 @@ using WPCordovaClassLib.Cordova.Commands;
 
 namespace Cordova.Extension.Commands
 {
-	public class AppVersion : BaseCommand
+	public class AppResources : BaseCommand
 	{
 		public void getVersionNumber(string empty)
 		{

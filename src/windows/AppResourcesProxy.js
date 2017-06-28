@@ -1,4 +1,4 @@
-AppVersionProxy = {
+AppResourcesProxy = {
   getVersionNumber: function (successCallback, failCallback, args) {
     var version = Windows.ApplicationModel.Package.current.id.version;
     successCallback([version.major, version.minor, version.build].join('.'));
@@ -34,4 +34,4 @@ AppVersionProxy = {
     successCallback(build);
   }
 };
-cordova.commandProxy.add("AppVersion", AppVersionProxy);
+cordova.commandProxy.add("AppResources", AppResourcesProxy);

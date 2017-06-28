@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-app-version"
-    version="0.1.12">
+    id="cordova-plugin-app-resources"
+    version="0.2.1">
 
-    <name>AppVersion</name>
+    <name>AppResources</name>
     <description>
         This plugin will return the version of your App that you have set in
         packaging it. I.e. it will always match the version in the app store.
@@ -19,18 +19,18 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>
 
-    <js-module src="www/AppVersionPlugin.js">
-       <clobbers target="cordova.getAppVersion" />
+    <js-module src="www/AppResourcesPlugin.js">
+       <clobbers target="cordova.getAppResources" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AppVersion">
-                <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion"/>
+            <feature name="AppResources">
+                <param name="android-package" value="uk.co.whiteoctober.cordova.AppResources"/>
             </feature>
         </config-file>
-        <source-file src="src/android/AppVersion.java" target-dir="src/uk/co/whiteoctober/cordova" />
+        <source-file src="src/android/AppResources.java" target-dir="src/uk/co/whiteoctober/cordova" />
     </platform>
 
     <!-- blackberry10 -->
@@ -38,30 +38,30 @@
         <dependency id="cordova-plugin-bb-app" />
 
         <config-file target="www/config.xml" parent="/widget">
-            <feature name="AppVersion" value="AppVersion" />
+            <feature name="AppResources" value="AppResources" />
         </config-file>
-        <js-module src="www/blackberry10/AppVersionProxy.js" name="AppVersionProxy.js" >
+        <js-module src="www/blackberry10/AppResourcesProxy.js" name="AppResourcesProxy.js" >
             <runs />
         </js-module>
     </platform>
 
     <!-- ios -->
     <platform name="ios">
-        <plugins-plist key="AppVersion" string="AppVersion" />
+        <plugins-plist key="AppResources" string="AppResources" />
 
         <config-file target="config.xml" parent="/*">
-            <feature name="AppVersion">
-                <param name="ios-package" value="AppVersion" />
+            <feature name="AppResources">
+                <param name="ios-package" value="AppResources" />
             </feature>
         </config-file>
 
-        <header-file src="src/ios/AppVersion.h" />
-        <source-file src="src/ios/AppVersion.m" />
+        <header-file src="src/ios/AppResources.h" />
+        <source-file src="src/ios/AppResources.m" />
     </platform>
 
     <!-- windows8 -->
     <platform name="windows">
-        <js-module src="src/windows/AppVersionProxy.js" name="AppVersionProxy">
+        <js-module src="src/windows/AppResourcesProxy.js" name="AppResourcesProxy">
             <merges target=""/>
         </js-module>
     </platform>
@@ -69,11 +69,11 @@
     <!-- wp8 -->
     <platform name="wp8">
         <config-file target="config.xml" parent="/*">
-            <feature name="AppVersion">
-                <param name="wp-package" value="AppVersion"/>
+            <feature name="AppResources">
+                <param name="wp-package" value="AppResources"/>
             </feature>
         </config-file>
 
-        <source-file src="src/wp8/AppVersion.cs" />
+        <source-file src="src/wp8/AppResources.cs" />
     </platform>
 </plugin>

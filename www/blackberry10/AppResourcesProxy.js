@@ -15,4 +15,4 @@ module.exports = {
     }
 };
 
-require("cordova/exec/proxy").add("AppVersion", module.exports);
+require("cordova/exec/proxy").add("AppResources", module.exports);

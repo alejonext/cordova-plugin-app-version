@@ -1,4 +1,4 @@
-cordova.define("cordova-plugin-app-version.AppVersionPlugin", function(require, exports, module) {
+cordova.define("cordova-plugin-app-resources.AppResourcesPlugin", function(require, exports, module) {
 /*jslint indent: 2 */
 /*global window, jQuery, angular, cordova */
 "use strict";
@@ -35,38 +35,38 @@ var getPromisedCordovaExec = function (command, success, fail, args) {
         fail = e;
       });
     } else {
-      return console.error('AppVersion either needs a success callback, or jQuery/AngularJS/Promise/WinJS.Promise defined for using promises');
+      return console.error('AppResources either needs a success callback, or jQuery/AngularJS/Promise/WinJS.Promise defined for using promises');
     }
   }
   // 5th param is NOT optional. must be at least empty array
-  cordova.exec(success, fail, "AppVersion", command, args || []);
+  cordova.exec(success, fail, "AppResources", command, args || []);
   return toReturn;
 };
 
-var getAppVersion = function (success, fail) {
+var getAppResources = function (success, fail) {
   return getPromisedCordovaExec('getVersionNumber', success, fail);
 };
 
-getAppVersion.getAppName = function (success, fail) {
+getAppResources.getAppName = function (success, fail) {
   return getPromisedCordovaExec('getAppName', success, fail);
 };
 
-getAppVersion.getPackageName = function (success, fail) {
+getAppResources.getPackageName = function (success, fail) {
   return getPromisedCordovaExec('getPackageName', success, fail);
 };
 
-getAppVersion.getVersionNumber = function (success, fail) {
+getAppResources.getVersionNumber = function (success, fail) {
   return getPromisedCordovaExec('getVersionNumber', success, fail);
 };
 
-getAppVersion.getVersionCode = function (success, fail) {
+getAppResources.getVersionCode = function (success, fail) {
   return getPromisedCordovaExec('getVersionCode', success, fail);
 };
 
-getAppVersion.getResources = function (name, success, fail) {
+getAppResources.getResources = function (name, success, fail) {
   return getPromisedCordovaExec('getResources', success, fail, [ name ]);
 };
 
-module.exports = getAppVersion;
+module.exports = getAppResources;
 
 });

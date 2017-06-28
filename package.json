@@ -1,26 +1,26 @@
 {
-  "name": "cordova-plugin-app-version",
-  "version": "0.1.12",
+  "name": "cordova-plugin-app-resources",
+  "version": "0.2.1",
   "description": "Cordova plugin to return the version number of the current app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/whiteoctober/cordova-plugin-app-version.git"
+    "url": "git+https://github.com/alejonext/cordova-plugin-app-version.git"
   },
   "keywords": [
     "cordova",
     "ecosystem:cordova",
     "app",
     "version",
-    "appversion",
+    "AppResources",
     "plugin"
   ],
-  "author": "whiteoctober",
+  "author": "AlejoNext",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/whiteoctober/cordova-plugin-app-version/issues"
+    "url": "https://github.com/alejonext/cordova-plugin-app-version/issues"
   },
-  "homepage": "https://github.com/whiteoctober/cordova-plugin-app-version#readme"
+  "homepage": "https://github.com/alejonext/cordova-plugin-app-version#readme"
 }

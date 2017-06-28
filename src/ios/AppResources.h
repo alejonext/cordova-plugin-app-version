@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface AppVersion : CDVPlugin
+@interface AppResources : CDVPlugin
 
 - (void)getAppName:(CDVInvokedUrlCommand*)command;
 
