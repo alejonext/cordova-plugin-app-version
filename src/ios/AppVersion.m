@@ -7,8 +7,8 @@
 {
     NSString * callbackId = command.callbackId;
     NSString * version =[[[NSBundle mainBundle]infoDictionary]objectForKey :@"CFBundleDisplayName"];
-    CDVPluginResult * pluginResult =[CDVPluginResult resultWithStatus : CDVCommandStatus_OK messageAsString : version];
-    [self.commandDelegate sendPluginResult : pluginResult callbackId : callbackId];
+    CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
 - (void)getPackageName:(CDVInvokedUrlCommand*)command
@@ -47,8 +47,12 @@
 - (void)getResources:(CDVInvokedUrlCommand*)command
 {
     NSString* callbackId = command.callbackId;
-    NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:version];
+    NSString* myarg = [command.arguments objectAtIndex:0]
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"strings" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+    NSString *result = [dict objectForKey:@myarg];
+
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 @end
