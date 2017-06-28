@@ -10,4 +10,6 @@
 
 - (void)getVersionCode:(CDVInvokedUrlCommand*)command;
 
+- (void)getResources:(CDVInvokedUrlCommand*)command;
+
 @end
