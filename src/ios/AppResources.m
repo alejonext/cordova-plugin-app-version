@@ -46,13 +46,24 @@
 
 - (void)getResources:(CDVInvokedUrlCommand*)command
 {
-    NSString* callbackId = command.callbackId;
-    NSString* myarg = [command.arguments objectAtIndex:0]
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"strings" ofType:@"plist"];
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
-    NSString *result = [dict objectForKey:@myarg];
+    CDVPluginResult *pluginResult;
+    NSString *filePath;
+    NSDictionary *dict;
+    NSString *result;
+    NSString *callbackId = command.callbackId;
 
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+    @try {
+        NSString *resource = [command.arguments objectAtIndex:0];
+        filePath = [[NSBundle mainBundle] pathForResource:@"strings" ofType:@"plist"];
+        dict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+        result = [dict objectForKey:resource];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+    }
+    @catch (NSException *exception) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Is not a file or key"];
+    }
+    @finally {
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+    }
 }
 @end

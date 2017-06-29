@@ -1,3 +1,6 @@
+### 0.2.3
+* When the file no exist in iOS
+
 ### 0.2.2
 * Get the resources in Android and iOS
 
